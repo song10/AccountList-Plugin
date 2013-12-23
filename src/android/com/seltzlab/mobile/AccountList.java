@@ -1,5 +1,8 @@
 package com.seltzlab.mobile;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,9 +34,10 @@ public class AccountList extends CordovaPlugin {
 				Account a = accounts[i];
 				// res.put(a.name);
 				// res.put(a);
-				JSONArray x = new JSONArray();
-				x.put('name', a.name);
-				x.put('type', a.type);
+                Map map = new HashMap();
+                map.put("name", a.name);
+                map.put("type", a.type);
+                JSONObject x = new JSONObject(map);
 				res.put(x);
 			}
 
@@ -41,7 +45,7 @@ public class AccountList extends CordovaPlugin {
 			return true;
 
 		} catch (JSONException e) {
-			callbackContext.error(e);
+            callbackContext.error(e.toString());
 			return false;
 		}
 	}
