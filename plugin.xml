@@ -1,0 +1,7 @@
+<platform name="android">
+    <config-file target="config.xml" parent="/*">
+        <feature name="AccountList">
+            <param name="android-package" value="com.seltzlab.mobile.AccountList" />
+        </feature>
+    </config-file>
+</platform>
