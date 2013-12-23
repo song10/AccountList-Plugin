@@ -29,7 +29,8 @@ public class AccountList extends CordovaPlugin {
 			JSONArray res = new JSONArray();
 			for (int i = 0; i < accounts.length; i++) {
 				Account a = accounts[i];
-				res.put(a.name);
+				// res.put(a.name);
+				res.put(a);
 			}
 
 			callbackContext.success(res);
