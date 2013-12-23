@@ -30,14 +30,18 @@ public class AccountList extends CordovaPlugin {
 			for (int i = 0; i < accounts.length; i++) {
 				Account a = accounts[i];
 				// res.put(a.name);
-				res.put(a);
+				// res.put(a);
+				JSONArray x = new JSONArray();
+				x.put('name', a.name);
+				x.put('type', a.type);
+				res.put(x);
 			}
 
 			callbackContext.success(res);
 			return true;
 
 		} catch (JSONException e) {
-			callbackContext.error("Invalid JSON args used. Expected a string array of permissions.");
+			callbackContext.error(e);
 			return false;
 		}
 	}
