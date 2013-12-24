@@ -5,6 +5,7 @@
     <js-module src="www/accountlist.js" name="accountlist">
         <clobbers target="AccountList" />
     </js-module>
+
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AccountList">
